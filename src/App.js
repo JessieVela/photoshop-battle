@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import Navigation from './components/navigation'
-import { Container } from 'react-bootstrap';
+import Navigation from './components/Navigation'
+import { Container, Header } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
       <Container>
-        <Navigation />
+        <Header>
+          <Navigation />
+        </Header>
       </Container>
     </div>
   );
