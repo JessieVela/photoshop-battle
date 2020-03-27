@@ -16,6 +16,7 @@ export default class Home extends Component {
             <Button variant="primary">Learn more</Button>
           </p>
         </Jumbotron>
+        
         <Nav className="mt-2" justify variant="tabs" defaultActiveKey="/home">
           <Nav.Item>
             <Nav.Link href="/home">Photoshop</Nav.Link>
@@ -27,6 +28,7 @@ export default class Home extends Component {
             <Nav.Link eventKey="link-2">Drawings</Nav.Link>
           </Nav.Item>
         </Nav>
+
         <CardDetails url="https://external-preview.redd.it/GPEmX1RaDKgT2LPhN9aL4CS6UE5NehVg19CsHDtISH8.jpg?width=640&crop=smart&auto=webp&s=bc337fede8fa209b9008868ead4d524a1a2e5490" />
         <CardDetails url="https://preview.redd.it/5jmztfwzopo41.jpg?width=640&crop=smart&auto=webp&s=a3b5940708071cde9a442da2923f58b28029f0c6" />
         <CardDetails url="https://preview.redd.it/q5iobba3nso41.jpg?width=640&crop=smart&auto=webp&s=d05686da0f2b961cd119c1e0c6485c9423962653" />

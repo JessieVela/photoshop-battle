@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { Row, Col, Image } from 'react-bootstrap';
-import '../styles/CardDetails.css';
+import React, { Component } from "react";
+import { Row, Col, Image } from "react-bootstrap";
+import "../styles/CardDetails.css";
 
 export default class CardDetails extends Component {
-
   render() {
     return (
       <Row className="card-detail-style">
@@ -18,9 +17,11 @@ export default class CardDetails extends Component {
           <p>Submissions: 6</p>
           <p>Date: 25 Mar 2020</p>
           <hr />
-          <span className="submission-link"><a href="#">See Submissions -></a></span>
+          <span className="submission-link">
+            <a href="#">See Submissions -></a>
+          </span>
         </Col>
       </Row>
-    )
+    );
   }
 }
