@@ -1,16 +1,27 @@
-import React from 'react';
-import './App.css';
-import Navigation from './components/Navigation'
-import { Container } from 'react-bootstrap';
-import FAQ from './components/FAQ';
+import React from "react";
+import "./App.css";
+import FAQ from "./components/FAQ";
+import Home from "./components/Home";
+import Navigation from "./components/Navigation";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Container>
-          <Navigation />
-          <FAQ />
-      </Container>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path="/Contact">
+            <FAQ />
+          </Route>
+          <Route path="/FAQ">
+            <FAQ />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
