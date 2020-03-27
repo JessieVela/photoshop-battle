@@ -18,7 +18,7 @@ export default class CardDetails extends Component {
           <p>Date: 25 Mar 2020</p>
           <hr />
           <span className="submission-link">
-            <a href="#">See Submissions -></a>
+            <a href="#1">See Submissions -></a>
           </span>
         </Col>
       </Row>

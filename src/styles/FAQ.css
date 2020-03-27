@@ -1,3 +1,15 @@
 .list-group-style {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.faq-list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid gray;
+}
+a {
+  color: #0000ff;
+}
+
+a:hover {
+  text-decoration: none;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/Navigation.css";
 
 export default class Navigation extends Component {
@@ -18,10 +18,10 @@ export default class Navigation extends Component {
                 <Link to="/Home">Home</Link>
               </Nav.Link>
               <Nav.Link className="text-white">
-              <Link to="/FAQ">FAQ</Link>
+                <Link to="/FAQ">FAQ</Link>
               </Nav.Link>
               <Nav.Link className="text-white" href="#pricing">
-              <Link to="/Contact">Contact Us</Link>
+                <Link to="/Contact">Contact Us</Link>
               </Nav.Link>
             </Nav>
             <Nav className="border-left">
