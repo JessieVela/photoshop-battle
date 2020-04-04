@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navigation />
+        {/* <Navigation /> */}
         <Switch>
           <Route path="/Contact">
             <FAQ />
