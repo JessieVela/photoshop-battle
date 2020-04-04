@@ -4,6 +4,8 @@ import FAQ from "./components/FAQ";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import CardComments from "./components/CardComments";
+
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
       <Router>
         {/* Commenting out to hide the errors in the console <Navigation /> */}
         <Switch>
+          <Route path="/post/comments">
+            <CardComments />
+          </Route>
           <Route path="/Contact">
             <FAQ />
           </Route>

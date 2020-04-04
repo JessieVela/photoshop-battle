@@ -12,12 +12,12 @@ export default class Home extends Component {
     };
   }
 
-  componentDidMount() {
-    axios.get("http://localhost:9000/posts").then((res) => {
-      const responses = res.data.slice(2, res.data.length - 1);
-      this.setState({ responses });
-    });
-  }
+  // componentDidMount() {
+  //   axios.get("http://localhost:9000/posts").then((res) => {
+  //     const responses = res.data.slice(2, res.data.length - 1);
+  //     this.setState({ responses });
+  //   });
+  // }
 
   render() {
     console.log(this.state.responses);

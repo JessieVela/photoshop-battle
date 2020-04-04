@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 export default class CardComments extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class CardComments extends Component {
                 <Image thumbnail src={this.props.url} />
               </div>
             </Col>
-            <Col sm={4}> 
+            <Col sm={4}>
               <h2>Redditor: photoshopKing211</h2>
             </Col>
           </Row>
