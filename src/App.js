@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navigation />
+        {/* Commenting out to hide the errors in the console <Navigation /> */}
         <Switch>
           <Route path="/Contact">
             <FAQ />

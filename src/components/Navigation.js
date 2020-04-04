@@ -7,26 +7,45 @@ export default class Navigation extends Component {
   render() {
     return (
       <>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          bg="dark"
+          variant="dark"
+          className="navigation-edge"
+        >
           <Navbar.Brand>
-            <Link to="/">Beyond The Scene</Link>
+            <Link className="text-white" to="/">
+              Photoshop Battle
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link className="text-white">
-                <Link to="/Home">Home</Link>
+            <Nav className="">
+              <Nav.Link>
+                <Link className="text-white" to="/Home">
+                  Home
+                </Link>
               </Nav.Link>
-              <Nav.Link className="text-white">
-                <Link to="/FAQ">FAQ</Link>
+              <Nav.Link>
+                <Link className="text-white" to="/FAQ">
+                  FAQ
+                </Link>
               </Nav.Link>
-              <Nav.Link className="text-white" href="#pricing">
-                <Link to="/Contact">Contact Us</Link>
+              <Nav.Link href="#pricing">
+                <Link className="text-white" to="/Contact">
+                  Contact Us
+                </Link>
+              </Nav.Link>
+            </Nav>
+            <Nav className="ml-auto border-left">
+              <Nav.Link className="text-white" href="#features">
+                Login
               </Nav.Link>
             </Nav>
             <Nav className="border-left">
               <Nav.Link className="text-white" href="#features">
-                Login
+                Register
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

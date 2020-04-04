@@ -13,9 +13,9 @@ export default class CardDetails extends Component {
           </div>
         </Col>
         <Col sm={8}>
-          <h2>Title of Photoshop Battle</h2>
+          <h2>{this.props.title}</h2>
           <hr />
-          <p>Submissions: 6</p>
+          <p>Submissions: {this.props.commentTotal}</p>
           <p>Date: 25 Mar 2020</p>
           <hr />
           <span className="submission-link">
