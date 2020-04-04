@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { Jumbotron, Button, Nav, Container } from "react-bootstrap";
 import CardDetails from "./CardDetails";
+import axios from 'axios';
 
 export default class Home extends Component {
+
+  getContent = () => {
+    axios.get('http://localhost:3000/posts')
+  }
+
   render() {
     return (
       <>
