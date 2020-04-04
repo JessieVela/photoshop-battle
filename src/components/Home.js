@@ -36,6 +36,7 @@ export default class Home extends Component {
           </Container>
         </Jumbotron>
         <Container>
+          {/* Possible future updates will include from these other subreddits */}
           <Nav className="mt-2" justify variant="tabs" defaultActiveKey="/home">
             <Nav.Item>
               <Nav.Link eventKey="/home">Photoshop</Nav.Link>
@@ -47,14 +48,17 @@ export default class Home extends Component {
               <Nav.Link eventKey="/Drawings">Drawings</Nav.Link>
             </Nav.Item>
           </Nav>
+
           {this.state.responses.map((data) => {
-            return <CardDetails 
-            key={data.id} 
-            title={data.title} 
-            url={data.url} 
-            commentTotal={data.comments.length - 1}
-              
-              />;
+            return (
+              <CardDetails
+                key={data.id}
+                title={data.title}
+                url={data.url}
+                // The first comment is the auto moderator posting the rules on commenting, so we count one less
+                commentTotal={data.comments.length - 1}
+              />
+            );
           })}
         </Container>
       </>
