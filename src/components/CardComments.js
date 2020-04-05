@@ -12,9 +12,11 @@ export default class CardComments extends Component {
                 <Image thumbnail src={this.props.url} />
               </div>
             </Col>
-            <Col sm={4}>
-              <h2>Redditor: photoshopKing211</h2>
-            </Col>
+            <div class="grid">
+              <div class="grid-item">...</div>
+              <div class="grid-item grid-item--width2">...</div>
+              <div class="grid-item">...</div>
+            </div>
           </Row>
         </Container>
       </>
