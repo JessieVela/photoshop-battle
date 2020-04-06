@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../styles/Navigation.css";
+import { LinkContainer } from "react-router-bootstrap";
 
 export default class Navigation extends Component {
   render() {
@@ -22,31 +23,33 @@ export default class Navigation extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="">
-              <Nav.Link>
-                <Link className="text-white" to="/Home">
-                  Home
-                </Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link className="text-white" to="/FAQ">
-                  FAQ
-                </Link>
-              </Nav.Link>
-              <Nav.Link href="#pricing">
-                <Link className="text-white" to="/Contact">
-                  Contact Us
-                </Link>
-              </Nav.Link>
+              <Link className="text-white nav-spacing" to="/">
+                Home
+              </Link>
+              <Link className="text-white nav-spacing" to="/FAQ">
+                FAQ
+              </Link>
+              <Link className="text-white nav-spacing" to="/contact">
+                Contact Us
+              </Link>
             </Nav>
             <Nav className="ml-auto border-left">
-              <Nav.Link className="text-white" href="#features">
+              <Link
+                className="text-white nav-spacing"
+                href="#features"
+                to="/login"
+              >
                 Login
-              </Nav.Link>
+              </Link>
             </Nav>
             <Nav className="border-left">
-              <Nav.Link className="text-white" href="#features">
+              <Link
+                className="text-white nav-spacing"
+                href="#features"
+                to="/register"
+              >
                 Register
-              </Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -6,17 +6,16 @@ import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CardComments from "./components/CardComments";
 
-
 function App() {
   return (
     <div className="App">
       <Router>
-        {/* Commenting out to hide the errors in the console <Navigation /> */}
+        <Navigation />
         <Switch>
           <Route path="/post/comments">
             <CardComments />
           </Route>
-          <Route path="/Contact">
+          <Route path="/contact">
             <FAQ />
           </Route>
           <Route path="/FAQ">
