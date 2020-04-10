@@ -8,42 +8,58 @@ export default class CardComments extends Component {
     super(props);
 
     this.state = {
-      responses: [],
+      postData: [],
     };
   }
 
-  componentDidMount() {
-    axios.get("http://localhost:9000/posts").then((res) => {
-      const responses = res.data.slice(2, res.data.length - 1);
-      this.setState({ ...responses });
-    });
+  async componentDidMount() {
+    this.setState({ postData: await this.getPosts() });
   }
 
+  getPosts = async () => {
+    return (await axios.get("http://localhost:9000/posts")).data.filter(
+      (post) => !post.stickied
+    );
+  };
+
   render() {
+    console.log(this.state.postData[0]);
+    const { title, url, author } = this.state.postData.length
+      ? this.state.postData[0]
+      : "";
     return (
       <>
         <Container>
           <Row>
-            <h1>{}</h1>
+            <h1>{title}</h1>
           </Row>
           <hr />
           <Row>
-            <Col>
-              <div className="card-image">
-                <Image src="https://i.redd.it/b4l69pxzkwq41.jpg" />
-              </div>
-            </Col>
+            <h3>By: {author}</h3>
           </Row>
-          <Row>
-            <h2>Submissions: </h2>
-          </Row>
-          <hr />
           <Row md={2}>
             <Col>
               <div className="card-image">
-                <Image src="https://i.imgur.com/cvHKsG6.jpg" />
+                <Image src={url} />
               </div>
             </Col>
+          </Row>
+          <Row>
+            <Col>
+              <h3>Submissions:</h3>
+            </Col>
+          </Row>
+          <hr />
+          <Row md={2}>
+            {this.state.postData.length
+              ? this.state.postData[0].comments.map((comment) => {
+                  return (
+                    <Col>
+                      <Image thumbnail src={comment.url} key={comment.id} />
+                    </Col>
+                  );
+                })
+              : ""}
           </Row>
         </Container>
       </>

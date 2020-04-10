@@ -54,8 +54,7 @@ export default class Home extends Component {
                 key={data.id}
                 title={data.title}
                 url={data.url}
-                // The first comment is the auto moderator posting the rules on commenting, so we count one less
-                commentTotal={data.comments.length - 1}
+                commentTotal={data.comments.length}
               />
             );
           })}
