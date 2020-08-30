@@ -1,65 +1,38 @@
 import React, { Component } from "react";
-import { Jumbotron, Button, Nav, Container } from "react-bootstrap";
-import CardDetails from "./CardDetails";
+import { setPosts } from "./../store/actions";
+import { connect } from "react-redux";
 import axios from "axios";
+import PostList from "./PostList";
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      responses: [],
+      posts: [],
     };
   }
 
   componentDidMount() {
     axios.get("http://localhost:9000/posts").then((res) => {
       const responses = res.data.slice(2, res.data.length - 1);
-      this.setState({ responses });
+      this.handlePosts(responses);
     });
   }
+
+  
+
+  handlePosts = (posts) => {
+    //dispatches actions to set posts
+    this.props.setPosts(posts);
+  };
 
   render() {
     return (
       <>
-        <Jumbotron className="mt-3">
-          <Container>
-            <h1>Hello, world!</h1>
-            <p>
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
-            </p>
-            <p>
-              <Button variant="primary">Learn more</Button>
-            </p>
-          </Container>
-        </Jumbotron>
-        <Container>
-          {/* Possible future updates will include from these other subreddits */}
-          <Nav className="mt-2" justify variant="tabs" defaultActiveKey="/home">
-            <Nav.Item>
-              <Nav.Link eventKey="/home">Photoshop</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/Photography">Photography</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/Drawings">Drawings</Nav.Link>
-            </Nav.Item>
-          </Nav>
-
-          {this.state.responses.map((data) => {
-            return (
-              <CardDetails
-                key={data.id}
-                title={data.title}
-                url={data.url}
-                commentTotal={data.comments.length}
-              />
-            );
-          })}
-        </Container>
+        <PostList />
       </>
     );
   }
 }
+
+export default connect(null, { setPosts })(Home);

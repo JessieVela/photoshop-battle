@@ -1,0 +1,15 @@
+.post-body {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.post-card {
+    margin: 10px;
+    flex: 1 1 calc(33.33% - 20px);
+}
+
+.post-card img {
+    width: 150px;
+    height: auto;
+}
