@@ -6,10 +6,10 @@
 
 .post-card {
     margin: 10px;
-    flex: 1 1 calc(33.33% - 20px);
 }
 
 .post-card img {
+    display: flex;
     width: 150px;
     height: auto;
 }

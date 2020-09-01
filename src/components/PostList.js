@@ -15,7 +15,7 @@ class PostList extends Component {
                 <div>
                   <p>Poster: {post.author}</p>
                   <p>Comments: {post.comments.length}</p>
-                  <a href="/post-comments">View comments</a>
+                  <a href={"/comments/"+ post.id}>View comments</a>
                 </div>
             </div>
           );
