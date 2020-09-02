@@ -7,27 +7,48 @@ export default class Navigation extends Component {
   render() {
     return (
       <>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          bg="dark"
+          variant="dark"
+          className="navigation-edge"
+        >
           <Navbar.Brand>
-            <Link to="/">Beyond The Scene</Link>
+            <Link className="text-white" to="/">
+              Photoshop Battle
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link className="text-white">
-                <Link to="/Home">Home</Link>
-              </Nav.Link>
-              <Nav.Link className="text-white">
-                <Link to="/FAQ">FAQ</Link>
-              </Nav.Link>
-              <Nav.Link className="text-white" href="#pricing">
-                <Link to="/Contact">Contact Us</Link>
-              </Nav.Link>
+            <Nav className="">
+              <Link className="text-white nav-spacing" to="/">
+                Home
+              </Link>
+              <Link className="text-white nav-spacing" to="/FAQ">
+                FAQ
+              </Link>
+              <Link className="text-white nav-spacing" to="/contact">
+                Contact Us
+              </Link>
+            </Nav>
+            <Nav className="ml-auto border-left">
+              <Link
+                className="text-white nav-spacing"
+                href="#features"
+                to="/login"
+              >
+                Login
+              </Link>
             </Nav>
             <Nav className="border-left">
-              <Nav.Link className="text-white" href="#features">
-                Login
-              </Nav.Link>
+              <Link
+                className="text-white nav-spacing"
+                href="#features"
+                to="/register"
+              >
+                Register
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

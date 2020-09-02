@@ -1,29 +1,26 @@
 import React from "react";
 import "./App.css";
-import FAQ from "./components/FAQ";
 import Home from "./components/Home";
-import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PostComments from "./components/PostComments";
+import NoMatch from "./components/NoMatch";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <>
       <Router>
-        <Navigation />
         <Switch>
-          <Route path="/Contact">
-            <FAQ />
-          </Route>
-          <Route path="/FAQ">
-            <FAQ />
-          </Route>
+          <Route path="/comments/:id" component={PostComments}></Route>
+          <Route path="/Contact"></Route>
+          <Route path="/FAQ"></Route>
           <Route path="/">
             <Home />
           </Route>
+          <Route>
+            <NoMatch />
+          </Route>
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
-
-export default App;
