@@ -13,9 +13,13 @@ class PostList extends Component {
               <img src={post.url} key={post.id} />
               <h2>{post.title}</h2>
               <div className="post-info">
-                <a src={post.url}>Reddit Post</a>
+                <a target="_blank" rel="noopener noreferrer" href={post.url}>
+                  Reddit Image
+                </a>
                 <p>Poster: {post.author}</p>
                 <p>Comments: {post.comments.length}</p>
+              </div>
+              <div className="view-button">
                 <Link to={"/comments/" + post.id}>View Comments</Link>
               </div>
             </div>

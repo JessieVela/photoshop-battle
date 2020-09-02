@@ -13,10 +13,24 @@ class PostComments extends Component {
         </div>
         <div className="comment-body">
           {this.props.comments.map((comment) => {
+            if (
+              comment.url.indexOf("i.imgur") == -1 &&
+              comment.url.indexOf("imgur")
+            ) {
+              return (
+                <div className="comment-image">
+                  <p>
+                    Bad Imgur link. Please use the direct link to the image.
+                  </p>
+                  <p>By Redditor: {comment.author}</p>
+                </div>
+              );
+            }
             return (
               <div className="comment-image">
                 <img src={comment.url} key={comment.id} />
                 {comment.text && <p>{comment.text}</p>}
+                <p>By Redditor: {comment.author}</p>
               </div>
             );
           })}
