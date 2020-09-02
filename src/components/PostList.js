@@ -13,7 +13,7 @@ class PostList extends Component {
               <img src={post.url} key={post.id} />
               <h2>{post.title}</h2>
               <div className="post-info">
-                <p>{post.url}</p>
+                <a src={post.url}>Reddit Post</a>
                 <p>Poster: {post.author}</p>
                 <p>Comments: {post.comments.length}</p>
                 <Link to={"/comments/" + post.id}>View Comments</Link>
