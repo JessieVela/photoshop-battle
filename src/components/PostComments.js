@@ -1,15 +1,36 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import "./../styles/PostComments.css";
 
-export default class PostComments extends Component {
-  componentDidMount() {
-    const { id } = this.props.match.params;
-  }
-  // TODO: need to map state to props and get the information for the post with the specific id
+class PostComments extends Component {
   render() {
+    console.log(this.props);
     return (
-      <div>
-        <h2>Comments</h2>
+      <div className="post-comments">
+        <div className="comment-title">
+          <h3>{this.props.title}</h3>
+          <img src={this.props.url} alt="" />
+        </div>
+        <div className="comment-body">
+          {this.props.comments.map((comment) => {
+            return (
+              <div className="comment-image">
+                <img src={comment.url} key={comment.id} />
+                {comment.text && <p>{comment.text}</p>}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  const post = state.posts.posts.find((post) => {
+    if (post.id == ownProps.match.params.id) return post.id;
+  });
+  return post;
+};
+
+export default connect(mapStateToProps)(PostComments);

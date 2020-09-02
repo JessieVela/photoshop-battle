@@ -10,9 +10,9 @@ export default function App() {
     <>
       <Router>
         <Switch>
+          <Route path="/comments/:id" component={PostComments}></Route>
           <Route path="/Contact"></Route>
           <Route path="/FAQ"></Route>
-          <Route path="/comments/:id" component={PostComments}></Route>
           <Route path="/">
             <Home />
           </Route>

@@ -19,8 +19,6 @@ class Home extends Component {
     });
   }
 
-  
-
   handlePosts = (posts) => {
     //dispatches actions to set posts
     this.props.setPosts(posts);
@@ -35,4 +33,8 @@ class Home extends Component {
   }
 }
 
-export default connect(null, { setPosts })(Home);
+const mapStateToProps = (state) => {
+  return { posts: state.posts };
+};
+
+export default connect(mapStateToProps, { setPosts })(Home);
