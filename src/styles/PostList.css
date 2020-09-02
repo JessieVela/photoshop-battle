@@ -1,15 +1,27 @@
 .post-body {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .post-card {
-    margin: 10px;
+  width: 80%;
+  border: 3px solid black;
+  margin: 10px;
+  padding: 5px;
 }
 
 .post-card img {
-    display: flex;
-    width: 150px;
-    height: auto;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.post-info {
+  text-align: left;
+  margin: 25px;
 }

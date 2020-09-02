@@ -10,9 +10,9 @@ class PostList extends Component {
         {this.props.posts.posts.map((post) => {
           return (
             <div className="post-card">
-              <img style={{ width: "300px" }} src={post.url} key={post.id} />
+              <img src={post.url} key={post.id} />
               <h2>{post.title}</h2>
-              <div>
+              <div className="post-info">
                 <p>{post.url}</p>
                 <p>Poster: {post.author}</p>
                 <p>Comments: {post.comments.length}</p>
