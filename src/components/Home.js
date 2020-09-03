@@ -13,12 +13,10 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("https://photoshop-battle-api.herokuapp.com/posts")
-      .then((res) => {
-        const responses = res.data.slice(2, res.data.length - 1);
-        this.handlePosts(responses);
-      });
+    axios.get("http://localhost:9000/posts").then((res) => {
+      const responses = res.data.slice(2, res.data.length - 1);
+      this.handlePosts(responses);
+    });
   }
 
   handlePosts = (posts) => {

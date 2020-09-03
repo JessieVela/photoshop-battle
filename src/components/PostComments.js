@@ -14,7 +14,7 @@ class PostComments extends Component {
         <div className="comment-body">
           {this.props.comments.map((comment) => {
             if (
-              comment.url.indexOf("i.imgur") == -1 &&
+              comment.url.indexOf("i.imgur") === -1 &&
               comment.url.indexOf("imgur")
             ) {
               return (
@@ -28,7 +28,7 @@ class PostComments extends Component {
             }
             return (
               <div className="comment-image">
-                <img src={comment.url} key={comment.id} />
+                <img src={comment.url} key={comment.id} alt="" />
                 {comment.text && <p>{comment.text}</p>}
                 <p>By Redditor: {comment.author}</p>
               </div>
@@ -42,7 +42,7 @@ class PostComments extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   const post = state.posts.posts.find((post) => {
-    if (post.id == ownProps.match.params.id) return post.id;
+    if (post.id === ownProps.match.params.id) return post.id;
   });
   return post;
 };

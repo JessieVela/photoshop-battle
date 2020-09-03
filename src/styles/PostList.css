@@ -9,7 +9,7 @@
 }
 
 .post-card {
-  width: 80%;
+  width: 95%;
   margin: 10px;
   background-color: white;
   border-radius: 10px;
@@ -46,4 +46,37 @@
 .view-button a {
   color: white;
   text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .post-body {
+    flex-direction: row;
+  }
+
+  .post-card {
+    width: 400px;
+    height: 600px;
+    margin: 25px 10px;
+  }
+
+  .post-img-wrapper {
+    height: 60%;
+  }
+
+  .post-card img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .post-info-wrapper {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .post-info {
+    margin: 10px;
+  }
 }

@@ -10,17 +10,21 @@ class PostList extends Component {
         {this.props.posts.posts.map((post) => {
           return (
             <div className="post-card">
-              <img src={post.url} key={post.id} />
-              <h2>{post.title}</h2>
-              <div className="post-info">
-                <a target="_blank" rel="noopener noreferrer" href={post.url}>
-                  Reddit Image
-                </a>
-                <p>Poster: {post.author}</p>
-                <p>Comments: {post.comments.length}</p>
+              <div className="post-img-wrapper">
+                <img src={post.url} key={post.id} alt="" />
               </div>
-              <div className="view-button">
-                <Link to={"/comments/" + post.id}>View Comments</Link>
+              <div className="post-info-wrapper">
+                <h2>{post.title.split(": ").pop()}</h2>
+                <div className="post-info">
+                  <a target="_blank" rel="noopener noreferrer" href={post.url}>
+                    Reddit Image
+                  </a>
+                  <p>Poster: {post.author}</p>
+                  <p>Comments: {post.comments.length}</p>
+                </div>
+                <div className="view-button">
+                  <Link to={"/comments/" + post.id}>View Comments</Link>
+                </div>
               </div>
             </div>
           );
