@@ -9,7 +9,7 @@ class PostList extends Component {
       <div className="post-body">
         {this.props.posts.posts.map((post) => {
           return (
-            <div className="post-card">
+            <div className="post-card" key={post.id}>
               <div className="post-img-wrapper">
                 <img src={post.url} key={post.id} alt="" />
               </div>

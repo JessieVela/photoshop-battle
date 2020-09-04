@@ -32,6 +32,7 @@
 }
 
 .comment-image img {
+  cursor: pointer;
   width: 100%;
   height: auto;
   margin: auto;
@@ -52,7 +53,7 @@
 .comment-info {
   border: 1px solid grey;
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   margin: 5px;
   padding: 5px;
   background-color: whitesmoke;
@@ -70,5 +71,53 @@
 
   .comment-image {
     width: 25%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .comment-image img {
+    height: 60%;
+    width: auto;
+  }
+
+  .comment-info {
+    width: 40%;
+  }
+
+  .modalFreeze {
+    position: absolute;
+    filter: blur(3px);
+  }
+
+  .modalBackground {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(233, 233, 233, 0.9);
+    z-index: 5;
+  }
+
+  .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+  }
+
+  .modal img {
+    width: auto;
+    height: 100%;
+  }
+
+  #closeButton {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
