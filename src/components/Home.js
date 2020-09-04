@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://192.168.0.6:9000/posts").then((res) => {
+    axios.get("photoshop-battle-api.herokuapp.com/posts").then((res) => {
       const responses = res.data.slice(2, res.data.length - 1);
       this.handlePosts(responses);
     });
