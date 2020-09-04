@@ -22,9 +22,9 @@ class PostList extends Component {
                   <p>Poster: {post.author}</p>
                   <p>Comments: {post.comments.length}</p>
                 </div>
-                <div className="view-button">
-                  <Link to={"/comments/" + post.id}>View Comments</Link>
-                </div>
+                <Link to={"/comments/" + post.id}>
+                  <div className="view-button">View Comments</div>
+                </Link>
               </div>
             </div>
           );

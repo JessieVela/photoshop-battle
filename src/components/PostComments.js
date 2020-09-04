@@ -4,7 +4,8 @@ import "./../styles/PostComments.css";
 
 class PostComments extends Component {
   render() {
-    console.log(this.props);
+    const badLink = [];
+
     return (
       <div className="post-comments">
         <div className="comment-title">
@@ -17,14 +18,8 @@ class PostComments extends Component {
               comment.url.indexOf("i.imgur") === -1 &&
               comment.url.indexOf("imgur")
             ) {
-              return (
-                <div className="comment-image">
-                  <p>
-                    Bad Imgur link. Please use the direct link to the image.
-                  </p>
-                  <p>By Redditor: {comment.author}</p>
-                </div>
-              );
+              badLink.push(comment);
+              return null;
             }
             return (
               <div className="comment-image">
@@ -34,6 +29,28 @@ class PostComments extends Component {
               </div>
             );
           })}
+          <div className="honorable-mentions">
+            <p>
+              The following redditors had submissions but did not link with the
+              direct url. To view click on the link to be taken to Imgur.
+            </p>
+            <div className="comment-box">
+              {badLink.map((comment) => {
+                return (
+                  <div className="comment-info">
+                    <p>Redditor: {comment.author}</p>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={comment.url}
+                    >
+                      {comment.text}
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     );

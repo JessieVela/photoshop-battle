@@ -41,11 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.view-button a {
   color: white;
-  text-decoration: none;
+  font-size: 20px;
 }
 
 @media only screen and (min-width: 768px) {

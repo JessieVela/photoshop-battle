@@ -357,3 +357,7 @@ h2 {
   font: inherit;
   vertical-align: baseline;
 }
+
+a {
+  text-decoration: none;
+}
