@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Moment from "react-moment";
 import { connect } from "react-redux";
 import "./../styles/PostList.css";
 import { Link } from "react-router-dom";
@@ -7,7 +8,14 @@ class PostList extends Component {
   render() {
     return (
       <>
-        <h1 style={{ textAlign: "center" }}>Reddit Photoshop Battles</h1>
+        <div className="summary">
+          <h1>Reddit Photoshop Battles</h1>
+          <p>
+            Photoshop contests on reddit. A place to battle using image
+            manipulation software, play photoshop tennis, create new images from
+            old photos, or even win reddit gold.
+          </p>
+        </div>
         <div className="post-body">
           {this.props.posts.posts.map((post) => {
             return (
@@ -21,6 +29,13 @@ class PostList extends Component {
                   <h2>{post.title.split(": ").pop()}</h2>
                   <div className="post-info">
                     <p>Poster: {post.author}</p>
+                    <p>Up Votes: {post.ups}</p>
+                    <p>
+                      Created:{" "}
+                      <Moment unix format="MM/DD/YYYY hh:mm A">
+                        {post.created_utc}
+                      </Moment>
+                    </p>
                     <p>Submissions: {post.comments.length}</p>
                   </div>
                   <Link to={"/comments/" + post.id}>

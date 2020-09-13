@@ -44,6 +44,10 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .logo-wrapper {
+    width: auto;
+  }
+
   .logo-wrapper img {
     width: 300px;
   }
@@ -53,8 +57,9 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
-    width: 50%;
-    font-size: 1.2rem;
+    width: auto;
+    font-size: 1rem;
+    margin-left: auto;
   }
 
   .desktop {
@@ -65,6 +70,7 @@
     margin: 0 25px;
     background-color: transparent;
     border: none;
+    width: auto;
   }
 
   .nav-link a {

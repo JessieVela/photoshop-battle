@@ -8,6 +8,20 @@
   flex-direction: column;
 }
 
+.summary {
+  text-align: center;
+  margin: 100px;
+}
+
+.summary h1 {
+  font-size: 2.25rem;
+}
+
+.summary p {
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
 .post-card {
   width: 95%;
   margin: 10px;

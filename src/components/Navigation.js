@@ -23,7 +23,7 @@ export default class Navigation extends Component {
           <img
             src="https://via.placeholder.com/300x100?Logo+Image"
             alt=""
-            srcset=""
+            srcSet=""
           />
         </div>
         <div
@@ -34,15 +34,15 @@ export default class Navigation extends Component {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-menu-2"
+            className="icon icon-tabler icon-tabler-menu-2"
             width="44"
             height="44"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#2c3e50"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" />
             <line x1="4" y1="6" x2="20" y2="6" />
