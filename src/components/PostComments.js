@@ -29,16 +29,17 @@ class PostComments extends Component {
       <>
         {this.state.showModal && width > 768 ? (
           <>
-            <div className="modalBackground"></div>
             <div className="modal">
-              <img
-                src={closeButton}
-                id="closeButton"
-                onClick={() => {
-                  this.handleClickHold(null);
-                }}
-              />
-              <img src={this.state.imageUrl} alt="" />
+              <div className="modal-image">
+                <img src={this.state.imageUrl} alt="" />
+                <img
+                  src={closeButton}
+                  id="closeButton"
+                  onClick={() => {
+                    this.handleClickHold(null);
+                  }}
+                />
+              </div>
             </div>
           </>
         ) : null}
@@ -59,6 +60,8 @@ class PostComments extends Component {
               ) {
                 badLink.push(comment);
                 return;
+              } else if (comment.url.includes(".gifv")) {
+                comment.url = comment.url.replace(".gifv", ".gif");
               }
               return (
                 <div className="comment-image" key={comment.id}>
@@ -88,12 +91,13 @@ class PostComments extends Component {
                   return (
                     <div className="comment-info" key={comment.id}>
                       <p>Redditor: {comment.author}</p>
+                      <p>{comment.text}</p>
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href={comment.url}
                       >
-                        {comment.text}
+                        {comment.url}
                       </a>
                     </div>
                   );

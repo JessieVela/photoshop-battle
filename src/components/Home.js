@@ -14,11 +14,21 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://192.168.0.6:9000/posts").then((res) => {
-      const responses = res.data.slice(2, res.data.length - 1);
-      console.log(responses);
-      this.handlePosts(responses);
-    });
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+      axios
+        .get("https://photoshop-battle-api.herokuapp.com/posts")
+        .then((res) => {
+          const responses = res.data.slice(2, res.data.length - 1);
+          console.log(responses);
+          this.handlePosts(responses);
+        });
+    } else {
+      axios.get("http://192.168.0.6:9000/posts").then((res) => {
+        const responses = res.data.slice(2, res.data.length - 1);
+        console.log(responses);
+        this.handlePosts(responses);
+      });
+    }
   }
 
   handlePosts = (posts) => {
