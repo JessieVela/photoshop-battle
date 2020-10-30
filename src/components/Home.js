@@ -14,7 +14,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    console.log("Running in: " + process.env.NODE_ENV);
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === "production") {
       axios
         .get("https://photoshop-battle-api.herokuapp.com/posts")
         .then((res) => {
