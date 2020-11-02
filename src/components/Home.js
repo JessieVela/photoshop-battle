@@ -42,10 +42,10 @@ class Home extends Component {
       <>
         <div className="hero-wrapper">
           <div className="hero-title">
-            <h1>Welcome to *Name Pending*</h1>
+            <h1>Welcome to Reddit Photoshop Battle Viewer</h1>
           </div>
           <div className="hero-para">
-            <p>A place to showcase all work</p>
+            <p>A place to showcase the skills of fellow redditors in a easy to view layout.</p>
           </div>
         </div>
         <PostList />
