@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as _ from "underscore";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import "./../styles/PostList.css";
@@ -17,7 +18,7 @@ class PostList extends Component {
           </p>
         </div>
         <div className="post-body">
-          {this.props.posts.posts.map((post) => {
+          {_.map(this.props.posts, (post) => {
             return (
               <div className="post-card" key={post.id}>
                 <div className="post-img-wrapper">

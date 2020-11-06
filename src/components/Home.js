@@ -13,23 +13,22 @@ class Home extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log("Running in: " + process.env.NODE_ENV);
+  async componentWillMount () {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === "production") {
-      axios
+      await axios
         .get("https://photoshop-battle-api.herokuapp.com/posts")
         .then((res) => {
-          const responses = res.data.slice(2, res.data.length - 1);
-          console.log(responses);
-          this.handlePosts(responses);
+          this.handlePosts(res.data.slice(2, res.data.length - 1));
         });
     } else {
-      axios.get("http://192.168.0.6:9000/posts").then((res) => {
-        const responses = res.data.slice(2, res.data.length - 1);
-        console.log(responses);
-        this.handlePosts(responses);
+      await axios.get("http://localhost:9000/posts").then((res) => {
+        this.handlePosts(res.data.slice(2, res.data.length - 1));
       });
     }
+  }
+
+  componentDidMount() {
+    
   }
 
   handlePosts = (posts) => {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as _ from "underscore";
 import { connect } from "react-redux";
 import "./../styles/PostComments.css";
 import closeButton from "./../assets/close.png";
@@ -31,8 +32,9 @@ class PostComments extends Component {
           <>
             <div className="modal">
               <div className="modal-image">
-                <img src={this.state.imageUrl} alt="" />
+                <img src={this.state.imageUrl} alt={this.props.title} />
                 <img
+                  alt="Close Button"
                   src={closeButton}
                   id="closeButton"
                   onClick={() => {
@@ -59,7 +61,7 @@ class PostComments extends Component {
                 comment.url.indexOf("imgur")
               ) {
                 badLink.push(comment);
-                return;
+                return null;
               } else if (comment.url.includes(".gifv")) {
                 comment.url = comment.url.replace(".gifv", ".gif");
               }
@@ -112,7 +114,7 @@ class PostComments extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const post = state.posts.posts.find((post) => {
+  const post = _.find(state.posts, (post) => {
     if (post.id === ownProps.match.params.id) return post.id;
   });
   return post;

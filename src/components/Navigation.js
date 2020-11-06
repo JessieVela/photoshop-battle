@@ -20,11 +20,11 @@ export default class Navigation extends Component {
     return (
       <div className="navigation">
         <div className="logo-wrapper">
-          <img
+          <a href="/"><img
             src="https://via.placeholder.com/300x100?Logo+Image"
             alt=""
             srcSet=""
-          />
+          /></a>
         </div>
         <div
           className="nav-collapse desktop"
